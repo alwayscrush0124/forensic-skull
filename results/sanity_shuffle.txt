@@ -1,0 +1,12 @@
+標籤打亂：與原標籤一致比例 0.46（純隨機約 0.5）
+fold 0 ep  1/10 | loss 0.7003 | val AUC 0.565 acc 0.560 | 63s
+fold 0 ep  2/10 | loss 0.6608 | val AUC 0.312 acc 0.400 | 66s
+fold 0 ep  3/10 | loss 0.6302 | val AUC 0.357 acc 0.400 | 75s
+fold 0 ep  4/10 | loss 0.6665 | val AUC 0.416 acc 0.560 | 63s
+fold 0 ep  5/10 | loss 0.6423 | val AUC 0.416 acc 0.360 | 63s
+fold 0 ep  6/10 | loss 0.6220 | val AUC 0.409 acc 0.480 | 63s
+fold 0 ep  7/10 | loss 0.5807 | val AUC 0.455 acc 0.440 | 62s
+fold 0 ep  8/10 | loss 0.5609 | val AUC 0.448 acc 0.520 | 63s
+fold 0 ep  9/10 | loss 0.5483 | val AUC 0.448 acc 0.520 | 63s
+fold 0 ep 10/10 | loss 0.5374 | val AUC 0.429 acc 0.480 | 63s
+val AUC per epoch: [0.565, 0.312, 0.357, 0.416, 0.416, 0.409, 0.455, 0.448, 0.448, 0.429]

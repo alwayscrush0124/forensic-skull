@@ -1,0 +1,153 @@
+{
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n": 123,
+  "n_correct": 115,
+  "female_correct": {
+    "n": 49,
+    "pooled": {
+      "posterior/base": 0.0,
+      "posterior/mid": 0.092,
+      "posterior/vault": 0.094,
+      "middle/base": 0.005,
+      "middle/mid": 0.264,
+      "middle/vault": 0.129,
+      "anterior/base": 0.001,
+      "anterior/mid": 0.244,
+      "anterior/vault": 0.172
+    },
+    "per_fold": {
+      "0": {
+        "posterior/base": 0.0,
+        "posterior/mid": 0.072,
+        "posterior/vault": 0.127,
+        "middle/base": 0.012,
+        "middle/mid": 0.205,
+        "middle/vault": 0.195,
+        "anterior/base": 0.004,
+        "anterior/mid": 0.199,
+        "anterior/vault": 0.186
+      },
+      "1": {
+        "posterior/base": 0.007,
+        "posterior/mid": 0.133,
+        "posterior/vault": 0.036,
+        "middle/base": 0.042,
+        "middle/mid": 0.434,
+        "middle/vault": 0.062,
+        "anterior/base": 0.0,
+        "anterior/mid": 0.169,
+        "anterior/vault": 0.119
+      },
+      "2": {
+        "posterior/base": 0.0,
+        "posterior/mid": 0.068,
+        "posterior/vault": 0.096,
+        "middle/base": 0.016,
+        "middle/mid": 0.385,
+        "middle/vault": 0.158,
+        "anterior/base": 0.002,
+        "anterior/mid": 0.2,
+        "anterior/vault": 0.075
+      },
+      "3": {
+        "posterior/base": 0.0,
+        "posterior/mid": 0.082,
+        "posterior/vault": 0.056,
+        "middle/base": 0.013,
+        "middle/mid": 0.186,
+        "middle/vault": 0.128,
+        "anterior/base": 0.002,
+        "anterior/mid": 0.307,
+        "anterior/vault": 0.226
+      },
+      "4": {
+        "posterior/base": 0.004,
+        "posterior/mid": 0.206,
+        "posterior/vault": 0.117,
+        "middle/base": 0.006,
+        "middle/mid": 0.159,
+        "middle/vault": 0.065,
+        "anterior/base": 0.001,
+        "anterior/mid": 0.296,
+        "anterior/vault": 0.145
+      }
+    }
+  },
+  "male_correct": {
+    "n": 66,
+    "pooled": {
+      "posterior/base": 0.124,
+      "posterior/mid": 0.031,
+      "posterior/vault": 0.003,
+      "middle/base": 0.153,
+      "middle/mid": 0.017,
+      "middle/vault": 0.311,
+      "anterior/base": 0.222,
+      "anterior/mid": 0.076,
+      "anterior/vault": 0.062
+    },
+    "per_fold": {
+      "0": {
+        "posterior/base": 0.123,
+        "posterior/mid": 0.137,
+        "posterior/vault": 0.0,
+        "middle/base": 0.109,
+        "middle/mid": 0.035,
+        "middle/vault": 0.224,
+        "anterior/base": 0.238,
+        "anterior/mid": 0.073,
+        "anterior/vault": 0.061
+      },
+      "1": {
+        "posterior/base": 0.089,
+        "posterior/mid": 0.013,
+        "posterior/vault": 0.016,
+        "middle/base": 0.105,
+        "middle/mid": 0.023,
+        "middle/vault": 0.457,
+        "anterior/base": 0.185,
+        "anterior/mid": 0.075,
+        "anterior/vault": 0.037
+      },
+      "2": {
+        "posterior/base": 0.135,
+        "posterior/mid": 0.072,
+        "posterior/vault": 0.001,
+        "middle/base": 0.221,
+        "middle/mid": 0.015,
+        "middle/vault": 0.236,
+        "anterior/base": 0.185,
+        "anterior/mid": 0.072,
+        "anterior/vault": 0.064
+      },
+      "3": {
+        "posterior/base": 0.098,
+        "posterior/mid": 0.037,
+        "posterior/vault": 0.004,
+        "middle/base": 0.115,
+        "middle/mid": 0.043,
+        "middle/vault": 0.331,
+        "anterior/base": 0.181,
+        "anterior/mid": 0.091,
+        "anterior/vault": 0.101
+      },
+      "4": {
+        "posterior/base": 0.126,
+        "posterior/mid": 0.016,
+        "posterior/vault": 0.001,
+        "middle/base": 0.238,
+        "middle/mid": 0.113,
+        "middle/vault": 0.185,
+        "anterior/base": 0.224,
+        "anterior/mid": 0.059,
+        "anterior/vault": 0.037
+      }
+    }
+  }
+}

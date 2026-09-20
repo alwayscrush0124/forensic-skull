@@ -1,0 +1,13 @@
+preprocessed/
+nifti_data/
+raw_data/
+*.nii.gz
+*.dcm
+*.pt
+*.pth
+*.npy
+labels*.csv
+manifest.csv
+.venv/
+__pycache__/
+.DS_Store

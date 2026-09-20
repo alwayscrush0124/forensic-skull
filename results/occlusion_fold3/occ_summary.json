@@ -1,0 +1,377 @@
+{
+  "fold": 3,
+  "cube_mm": [
+    24,
+    24,
+    40
+  ],
+  "n_val": 24,
+  "cases": [
+    {
+      "case_id": "skull_004",
+      "gender": 0,
+      "base_logit": -2.693,
+      "p_female": 0.063,
+      "n_cubes": 1261,
+      "max_importance": 0.674,
+      "top_cube_center_xyz": [
+        132,
+        156,
+        32
+      ],
+      "importance_sum_pos": 72.02
+    },
+    {
+      "case_id": "skull_008",
+      "gender": 0,
+      "base_logit": -6.368,
+      "p_female": 0.002,
+      "n_cubes": 1175,
+      "max_importance": 1.131,
+      "top_cube_center_xyz": [
+        180,
+        96,
+        20
+      ],
+      "importance_sum_pos": 111.58
+    },
+    {
+      "case_id": "skull_013",
+      "gender": 0,
+      "base_logit": -1.912,
+      "p_female": 0.129,
+      "n_cubes": 1228,
+      "max_importance": 1.457,
+      "top_cube_center_xyz": [
+        120,
+        156,
+        32
+      ],
+      "importance_sum_pos": 93.6
+    },
+    {
+      "case_id": "skull_031",
+      "gender": 0,
+      "base_logit": -6.731,
+      "p_female": 0.001,
+      "n_cubes": 1450,
+      "max_importance": 1.303,
+      "top_cube_center_xyz": [
+        132,
+        156,
+        32
+      ],
+      "importance_sum_pos": 143.86
+    },
+    {
+      "case_id": "skull_034",
+      "gender": 1,
+      "base_logit": 6.408,
+      "p_female": 0.998,
+      "n_cubes": 1159,
+      "max_importance": 0.633,
+      "top_cube_center_xyz": [
+        168,
+        192,
+        24
+      ],
+      "importance_sum_pos": 88.97
+    },
+    {
+      "case_id": "skull_036",
+      "gender": 0,
+      "base_logit": -3.215,
+      "p_female": 0.039,
+      "n_cubes": 1234,
+      "max_importance": 1.148,
+      "top_cube_center_xyz": [
+        132,
+        156,
+        36
+      ],
+      "importance_sum_pos": 84.37
+    },
+    {
+      "case_id": "skull_041",
+      "gender": 1,
+      "base_logit": 3.134,
+      "p_female": 0.958,
+      "n_cubes": 1104,
+      "max_importance": 0.866,
+      "top_cube_center_xyz": [
+        108,
+        192,
+        28
+      ],
+      "importance_sum_pos": 99.09
+    },
+    {
+      "case_id": "skull_046",
+      "gender": 1,
+      "base_logit": -2.429,
+      "p_female": 0.081,
+      "n_cubes": 1052,
+      "max_importance": 0.732,
+      "top_cube_center_xyz": [
+        204,
+        96,
+        24
+      ],
+      "importance_sum_pos": 54.38
+    },
+    {
+      "case_id": "skull_047",
+      "gender": 1,
+      "base_logit": 2.871,
+      "p_female": 0.946,
+      "n_cubes": 1180,
+      "max_importance": 1.232,
+      "top_cube_center_xyz": [
+        96,
+        192,
+        28
+      ],
+      "importance_sum_pos": 90.69
+    },
+    {
+      "case_id": "skull_052",
+      "gender": 0,
+      "base_logit": 0.375,
+      "p_female": 0.593,
+      "n_cubes": 1116,
+      "max_importance": 0.567,
+      "top_cube_center_xyz": [
+        108,
+        204,
+        12
+      ],
+      "importance_sum_pos": 63.5
+    },
+    {
+      "case_id": "skull_053",
+      "gender": 0,
+      "base_logit": -3.247,
+      "p_female": 0.037,
+      "n_cubes": 1310,
+      "max_importance": 0.898,
+      "top_cube_center_xyz": [
+        132,
+        144,
+        36
+      ],
+      "importance_sum_pos": 102.09
+    },
+    {
+      "case_id": "skull_055",
+      "gender": 0,
+      "base_logit": -2.978,
+      "p_female": 0.048,
+      "n_cubes": 1154,
+      "max_importance": 0.802,
+      "top_cube_center_xyz": [
+        156,
+        72,
+        12
+      ],
+      "importance_sum_pos": 67.29
+    },
+    {
+      "case_id": "skull_058",
+      "gender": 1,
+      "base_logit": 3.115,
+      "p_female": 0.958,
+      "n_cubes": 1150,
+      "max_importance": 1.388,
+      "top_cube_center_xyz": [
+        144,
+        204,
+        24
+      ],
+      "importance_sum_pos": 91.82
+    },
+    {
+      "case_id": "skull_066",
+      "gender": 0,
+      "base_logit": -9.316,
+      "p_female": 0.0,
+      "n_cubes": 1386,
+      "max_importance": 1.111,
+      "top_cube_center_xyz": [
+        120,
+        144,
+        32
+      ],
+      "importance_sum_pos": 150.32
+    },
+    {
+      "case_id": "skull_072",
+      "gender": 0,
+      "base_logit": -1.447,
+      "p_female": 0.19,
+      "n_cubes": 1244,
+      "max_importance": 0.905,
+      "top_cube_center_xyz": [
+        108,
+        168,
+        32
+      ],
+      "importance_sum_pos": 78.85
+    },
+    {
+      "case_id": "skull_074",
+      "gender": 1,
+      "base_logit": 2.433,
+      "p_female": 0.919,
+      "n_cubes": 1008,
+      "max_importance": 0.469,
+      "top_cube_center_xyz": [
+        168,
+        84,
+        16
+      ],
+      "importance_sum_pos": 48.43
+    },
+    {
+      "case_id": "skull_079",
+      "gender": 1,
+      "base_logit": 5.968,
+      "p_female": 0.997,
+      "n_cubes": 1224,
+      "max_importance": 1.205,
+      "top_cube_center_xyz": [
+        108,
+        192,
+        28
+      ],
+      "importance_sum_pos": 109.55
+    },
+    {
+      "case_id": "skull_088",
+      "gender": 0,
+      "base_logit": 0.496,
+      "p_female": 0.621,
+      "n_cubes": 1057,
+      "max_importance": 0.678,
+      "top_cube_center_xyz": [
+        60,
+        108,
+        12
+      ],
+      "importance_sum_pos": 36.22
+    },
+    {
+      "case_id": "skull_097",
+      "gender": 1,
+      "base_logit": 3.935,
+      "p_female": 0.981,
+      "n_cubes": 1214,
+      "max_importance": 1.359,
+      "top_cube_center_xyz": [
+        96,
+        180,
+        28
+      ],
+      "importance_sum_pos": 121.24
+    },
+    {
+      "case_id": "skull_104",
+      "gender": 1,
+      "base_logit": 6.744,
+      "p_female": 0.999,
+      "n_cubes": 1175,
+      "max_importance": 1.169,
+      "top_cube_center_xyz": [
+        96,
+        180,
+        28
+      ],
+      "importance_sum_pos": 92.77
+    },
+    {
+      "case_id": "skull_113",
+      "gender": 0,
+      "base_logit": 0.09,
+      "p_female": 0.522,
+      "n_cubes": 1338,
+      "max_importance": 0.686,
+      "top_cube_center_xyz": [
+        120,
+        216,
+        12
+      ],
+      "importance_sum_pos": 80.94
+    },
+    {
+      "case_id": "skull_116",
+      "gender": 1,
+      "base_logit": 5.88,
+      "p_female": 0.997,
+      "n_cubes": 1089,
+      "max_importance": 1.061,
+      "top_cube_center_xyz": [
+        144,
+        180,
+        24
+      ],
+      "importance_sum_pos": 87.06
+    },
+    {
+      "case_id": "skull_120",
+      "gender": 0,
+      "base_logit": -3.565,
+      "p_female": 0.028,
+      "n_cubes": 1338,
+      "max_importance": 0.812,
+      "top_cube_center_xyz": [
+        120,
+        156,
+        32
+      ],
+      "importance_sum_pos": 104.41
+    },
+    {
+      "case_id": "skull_132",
+      "gender": 0,
+      "base_logit": -0.76,
+      "p_female": 0.319,
+      "n_cubes": 1296,
+      "max_importance": 0.7,
+      "top_cube_center_xyz": [
+        60,
+        192,
+        12
+      ],
+      "importance_sum_pos": 91.08
+    }
+  ],
+  "female_correct": {
+    "n": 9,
+    "mass_fraction_y_z": {
+      "posterior/base": 0.0,
+      "posterior/mid": 0.082,
+      "posterior/vault": 0.056,
+      "middle/base": 0.013,
+      "middle/mid": 0.186,
+      "middle/vault": 0.128,
+      "anterior/base": 0.002,
+      "anterior/mid": 0.307,
+      "anterior/vault": 0.226
+    },
+    "lateral_thirds_x": 0.477
+  },
+  "male_correct": {
+    "n": 11,
+    "mass_fraction_y_z": {
+      "posterior/base": 0.098,
+      "posterior/mid": 0.037,
+      "posterior/vault": 0.004,
+      "middle/base": 0.115,
+      "middle/mid": 0.043,
+      "middle/vault": 0.331,
+      "anterior/base": 0.181,
+      "anterior/mid": 0.091,
+      "anterior/vault": 0.101
+    },
+    "lateral_thirds_x": 0.37
+  }
+}
