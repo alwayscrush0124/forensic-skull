@@ -99,3 +99,33 @@
 2026-09-20｜五折 occlusion 完成並合併（123 例，115 判對）：女性顱底 0.01／中層 0.60／顱頂 0.40；男性顱底 0.50（前 0.22、後 0.12）／中層 0.12／頭頂 0.38；關鍵格子五折一致｜fold 0 的結論在全部五折重現；README §3.4 改為五折版，§5「只做一折」限制移除｜skulldemo/results/occlusion_pooled/occ_pooled_summary.json
 2026-09-20｜新增 occlusion_pool.py；repo 補入 occlusion_fold1–4 與 occlusion_pooled｜—｜skull-sex-cnn/occlusion_pool.py, results/occlusion_*
 2026-09-20｜各折重訓模型 val AUC：fold0 0.981、fold1 0.994、fold2 1.000、fold3 0.957、fold4 0.965（與主結果的模型非同一組權重）｜README §5 已註明｜skulldemo/results/explain_fold*/log.txt
+2026-09-20｜決策：專案定位為 MVP，不做人類盲判｜使用者拍板；推甄佐證的主體改為「經驗敘述 + repo」｜—
+2026-09-20｜寫推甄用經歷草稿 application_mvp_writeup.md（第一人稱、約一頁）；六處措辭已校回證據強度（val 男性人數為推論、金屬壓縮倍率、metadata 例外、occlusion 比例、檢查耗時）｜草稿數字全部對應 results/*；三處【填】一處【請確認】｜application_mvp_writeup.md
+2026-09-20｜application_mvp_writeup.md 去 AI 味＋降技術深度，19 處全套用；原稿備份 ~/.claude/backups/2026-09-20/｜使用者要求「不要寫得太深」；數字與【填】未動｜application_mvp_writeup.md
+
+## 任務卡 2026-09-20：年齡迴歸 pilot（skullage/）
+- 目標：用同一批 123 例（排除 <18、064、083、100）與同一套前處理輸出，訓練 DenseNet121-3D 迴歸年齡，看有沒有超過「猜平均」的訊號
+- 驗收條件：
+  1. skullage/train_age_cv.py 5-fold CV 跑完，輸出 metrics.json（MAE + bootstrap CI、RMSE、r、各年齡層 MAE／偏差）、oof_predictions.csv、summary.png
+  2. 旁邊放兩個 baseline：猜訓練折平均年齡；簡單特徵（骨量、bbox、骨平均 HU）ridge regression
+  3. 不動 skulldemo/ 任何程式；資料直接讀 ../skulldemo/preprocessed/，不複製
+- 非目標：不進推甄 repo（先看結果再說）；不含 <18 歲；不調參
+2026-09-20｜決策：年齡模型不放 <18 歲 7 例，維持 123 例與性別模型可比｜使用者拍板；小兒顱骨是另一種生物過程，且只有 7 例｜skullage/
+2026-09-20｜決策：第一輪用全頭部窗 [-500,1300]，不用 bone_only｜bone_only 只留最大連通骨元件，會把顱內鈣化（松果體、頸動脈虹吸部）一併去掉，那可能是年齡的主要線索；bone_only 留作第二輪對照｜skullage/train_age_cv.py
+2026-09-20｜年齡分布：18–96，mean 65.5、SD 18.9，40 歲以下只 12 例；猜平均 MAE 15.8 歲｜年齡模型要壓過這個數字才算有訊號；年輕人預期會被系統性猜老｜skulldemo/preprocessed/manifest.csv age 欄
+2026-09-20｜skullage/train_age_cv.py 完成（複製 train_cv.py 改迴歸：age 標籤、訓練折 z-score、L1 loss、年齡五分位分折、MAE/RMSE/r + CI、各年齡層偏差）；smoke 通過｜與性別模型同網路同設定，只換任務；skulldemo/ 未動｜skullage/train_age_cv.py
+2026-09-20｜簡單特徵 baseline（ridge，同折）：骨平均 HU 單獨 MAE 14.38 (12.45–16.35)、r +0.31；尺寸四項 MAE 16.07、r −0.06；猜平均 15.83｜骨密度代理（骨平均 HU 與年齡 r −0.33）有弱訊號，顱骨大小對年齡沒用；CNN 要壓過 14.4 才算學到尺寸／密度以外的東西｜skullage/results/feature_baseline/metrics.json
+2026-09-20｜啟動年齡 CNN 正式 run（全頭部窗、123 例、5 折 30 epoch、seed 42，pid 48554）｜每 epoch 64 s，預計 2.7 h｜skullage/results/age_fullhead/train.log
+2026-09-20｜年齡 CNN fold 0 完成：val MAE 10.42（ep 23 最低 9.64，後段 9.6–10.7 平穩）｜明顯壓過骨 HU baseline 14.4 與猜平均 15.8，有訊號；train loss 0.40 SD ≈ 7.6 歲，過擬合幅度可接受｜skullage/results/age_fullhead/train.log
+2026-09-20｜排入 bone_only 第二輪：chain_bone_only.sh 等第一輪 pid 48554 結束後自動啟動 --bone_only → results/age_bone_only/；使用者要求跑完通知｜第二輪看純顱骨形態（去掉顱內鈣化）還剩多少年齡訊號｜skullage/chain_bone_only.sh, results/chain.log
+2026-09-20｜年齡 CNN fold 1 完成：val MAE 10.98｜兩折 10.42/10.98，一致｜skullage/results/age_fullhead/train.log
+2026-09-20｜年齡 CNN fold 2 完成：val MAE 11.00｜三折 10.42/10.98/11.00｜skullage/results/age_fullhead/train.log
+2026-09-20｜年齡 CNN fold 3 完成：val MAE 10.20｜四折 10.42/10.98/11.00/10.20｜skullage/results/age_fullhead/train.log
+2026-09-20｜年齡 CNN 第一輪（全頭部窗）完成：OOF MAE 11.10 (95% CI 9.58–12.71)、RMSE 14.0、r 0.68；各折 10.42/10.98/11.00/10.20/12.91｜壓過猜平均 15.83 與骨 HU ridge 14.38；有骨密度以外的訊號｜skullage/results/age_fullhead/metrics.json
+2026-09-20｜年齡層偏差呈迴歸均值：18–39 歲（12 例）被猜老 +18.1、MAE 18.6；40–69 歲 +3～+7；80+（37 例）被猜年輕 −10.2｜年輕人少、模型往 65 歲收縮；解讀時要註明年齡分布偏老、極端年齡不可信｜skullage/results/age_fullhead/metrics.json by_age_group
+2026-09-20｜fold 4 偏差（12.91 vs 其他 10.2–11.0）；學習曲線前 15 epoch 各折震盪大（MAE 20–40），20 epoch 後才穩｜30 epoch 對迴歸剛好夠；不調參，先看 bone_only｜skullage/results/age_fullhead/summary.png
+2026-09-20｜bone_only 第二輪已由 chain 自動啟動（21:31）｜預計 2.7 h｜skullage/results/age_bone_only/train.log
+2026-09-20｜skull-sex-cnn/ git init + 首次 commit（50 檔，無影像／標籤／權重）；作者設為使用者本名與 email（repo-local）｜使用者要求「可以 git 了，注意敏感資料」；commit 前後各掃一次｜skull-sex-cnn/.git
+2026-09-20｜bone_only fold 0 完成：val MAE 12.88（全頭部同折 10.42）；fold 1 ep 29 在 12.84（全頭部 10.98）｜去掉顱內鈣化／軟組織後退約 2 歲，方向如預期，等五折｜skullage/results/age_bone_only/train.log
+2026-09-20｜bone_only fold 1 完成：val MAE 12.76｜兩折 12.88/12.76 vs 全頭部 10.42/10.98｜skullage/results/age_bone_only/train.log
+2026-09-20｜推送到 GitHub 私人 repo https://github.com/alwayscrush0124/skull-sex（main, 25590d5）；推甄稿 repo 連結已填｜使用者提供網址即授權推送；repo 為 PRIVATE｜skull-sex-cnn/.git, application_mvp_writeup.md
