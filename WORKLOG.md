@@ -129,3 +129,26 @@
 2026-09-20｜bone_only fold 0 完成：val MAE 12.88（全頭部同折 10.42）；fold 1 ep 29 在 12.84（全頭部 10.98）｜去掉顱內鈣化／軟組織後退約 2 歲，方向如預期，等五折｜skullage/results/age_bone_only/train.log
 2026-09-20｜bone_only fold 1 完成：val MAE 12.76｜兩折 12.88/12.76 vs 全頭部 10.42/10.98｜skullage/results/age_bone_only/train.log
 2026-09-20｜推送到 GitHub 私人 repo https://github.com/alwayscrush0124/skull-sex（main, 25590d5）；推甄稿 repo 連結已填｜使用者提供網址即授權推送；repo 為 PRIVATE｜skull-sex-cnn/.git, application_mvp_writeup.md
+2026-09-20｜bone_only fold 2 完成：val MAE 13.27｜三折 12.88/12.76/13.27 vs 全頭部 10.42/10.98/11.00，穩定差 2–2.5 歲｜skullage/results/age_bone_only/train.log
+2026-09-20｜bone_only fold 3 完成：val MAE 12.39｜四折 12.88/12.76/13.27/12.39 vs 全頭部 10.42/10.98/11.00/10.20｜skullage/results/age_bone_only/train.log
+2026-09-21｜年齡 CNN 第二輪（bone_only）完成：OOF MAE 12.66 (95% CI 10.90–14.45)、RMSE 16.1、r 0.57；各折 12.88/12.76/13.27/12.39/11.95｜比全頭部版 11.10 差 1.6 歲，CI 大幅重疊；純顱骨仍壓過猜平均 15.83 與骨 HU ridge 14.38，但軟組織／顱內鈣化對年齡的貢獻比對性別大（性別兩版只差 0.013 AUC）｜skullage/results/age_bone_only/metrics.json
+2026-09-21｜bone_only 各年齡層偏差比全頭部更極端：18–39 +19.2、40–49 +13.5、80+ −12.5｜純顱骨版更往均值收縮；兩版都不能用在 40 歲以下｜skullage/results/age_bone_only/metrics.json by_age_group
+2026-09-21｜任務卡驗收：1. 兩輪 metrics.json/oof_predictions.csv/summary.png 齊全 ✓ 2. 猜平均與 ridge baseline 齊全 ✓ 3. skulldemo/ 未動、資料未複製 ✓｜年齡 pilot 完成；是否進推甄 repo 待使用者決定｜skullage/results/
+2026-09-21｜使用者釐清用途：年齡 MVP 是包裝進推甄 AI 研究所 CV，讓電資老師看到有在動手做；不再跑 seed、不做可解釋性｜寫 skullage/README.md（一頁技術說明，格式同性別 README，所有數字來自 results/*/metrics.json）；下一步併進 skull-sex-cnn/age/ 與 CV 條目文字待使用者同意｜skullage/README.md
+2026-09-21｜使用者決定：AI 協作明寫（非電資本科，正是申請理由）；repo 維持一個，年齡併入；CV 文字傳給「推甄資料結構規劃」session｜—｜—
+2026-09-21｜年齡延伸併入推甄 repo：skull-sex-cnn/age/（兩支程式、README、三個 results 各 metrics/history/summary）；主 README 改標題、加「開發方式」一行、§5 指向、§7 檔案清單、新增 §9；原 README 備份 ~/.claude/backups/2026-09-21/｜repo 不收年齡 oof_predictions.csv（含病例層級年齡，與 repo 既有排除政策一致）與 train.log（含本機路徑）；PHI 掃描 clean｜skull-sex-cnn/README.md:1,5-7,181,257-262,270-287
+2026-09-21｜CV 條列版＋段落版已傳給「推甄資料結構規劃」session，附數字依據與三個決定｜git commit / push 由使用者決定｜—
+
+## 結案摘要 2026-09-21（session 結束）
+任務卡驗收（2026-09-19 開的卡）：
+1. 前處理輸出同 spacing／shape／orientation + QA + manifest → ✅ skulldemo/preprocessed/（133 例，240×240×40，1×1×5 mm，RAS）、qa_contact_sheet.png、manifest.csv
+2. 排除 <18、5-fold、AUC+CI、majority baseline → ✅ results/v2_bone_only/metrics.json（0.974, CI 0.945–0.995；seed43 0.976）；另有尺寸 baseline 0.77、標籤打亂 0.43、五折 occlusion
+3. 推甄 repo 無影像／DICOM／權重／病歷號 → ✅ https://github.com/alwayscrush0124/skull-sex（PRIVATE，2 commits，commit 前後掃描皆乾淨）
+4. README 寫清楚 v1 問題／修正／對照 → ✅ skull-sex-cnn/README.md §4（使用者已填作者、機構；IRB 行與模擬圖列由使用者決定刪除）
+額外產出：application_mvp_writeup.md（推甄經歷稿，已去 AI 味、降深度，repo 連結已填；第 9 行句子使用者尚未順完）
+
+待辦（下次接續）：
+- 使用者：順推甄稿第 9 行；推甄前決定 repo 是否改 public（README 有 NTUH 字樣、無 IRB 聲明）
+- 可選：explain.py 移除作廢 Grad-CAM 段、加 LICENSE、README 英文摘要
+- 資料安全：skulldemo/raw_data、blind_test_nifti、nifti_data、seg 含病歷號與 DICOM PHI，仍在 ~/Documents；推甄用不到，應移至加密碟或刪除（需使用者決定）
+- 不做：人類盲判（使用者定位為 MVP）
