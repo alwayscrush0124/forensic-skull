@@ -152,3 +152,16 @@
 - 可選：explain.py 移除作廢 Grad-CAM 段、加 LICENSE、README 英文摘要
 - 資料安全：skulldemo/raw_data、blind_test_nifti、nifti_data、seg 含病歷號與 DICOM PHI，仍在 ~/Documents；推甄用不到，應移至加密碟或刪除（需使用者決定）
 - 不做：人類盲判（使用者定位為 MVP）
+
+## 補記 2026-09-23：年齡迴歸延伸（2026-09-21 於另一 session 完成，結案摘要當時漏記）
+2026-09-21｜完成年齡迴歸延伸 age/：同 123 例、同前處理、同 DenseNet121-3D，標籤換年齡、BCE 換 L1、分折改依年齡五分位 stratified｜驗證同一套 pipeline 換任務的可行性；MVP 的加分題｜skull-sex-cnn/age/train_age_cv.py, age/README.md
+2026-09-21｜年齡結果：全頭部 OOF MAE 11.10 歲（95% CI 9.58–12.71），r=0.68；純顱骨 12.66（10.90–14.45），r=0.57；猜平均 baseline 15.83｜兩版都贏 baseline，但幅度遠小於性別任務｜age/results/age_fullhead/metrics.json, age_bone_only/metrics.json
+2026-09-21｜發現年齡任務與性別任務相反：全頭部優於純顱骨 1.56 歲，CI 部分重疊｜性別的訊號在顱骨，年齡的訊號有一部分在顱骨以外（軟組織／血管鈣化？未驗證）｜age/results/*/metrics.json
+2026-09-21｜特徵 baseline：骨平均 HU 單獨 MAE 14.38，優於尺寸 16.07；原始特徵與年齡相關 骨平均 HU −0.33、骨體素數 −0.13、bbox 三軸 ≤0.06｜年齡訊號來自骨密度而非大小，與性別任務（尺寸 AUC 0.77）相反｜age/results/feature_baseline/metrics.json
+2026-09-21｜發現年輕組誤差最大：18–39 歲 n=12，全頭部 MAE 18.6、bias +18.1（系統性高估）｜樣本偏老（中位 68，80+ 佔 37 例）導致迴歸向均值；README 需註明此限制｜age/results/age_fullhead/metrics.json by_age_group
+2026-09-23｜更正：09-21 結案摘要的「額外產出」漏列 age/ 延伸（該 commit 6b61b72 早於摘要 11 小時）｜當時只查 git log 最新一筆未看全史；本節補記｜WORKLOG.md 結案摘要
+
+待辦更新（取代前節待辦的第 2 項）：
+- age/README 已完整涵蓋年輕組高估（§3.2 分層表、§3.3 迴歸均值、§4 限制），無需補寫
+- 待辦不變：順推甄稿第 9 行、決定 repo 是否 public、處理 skulldemo/ 的 PHI 資料
+- 推甄稿 application_mvp_writeup.md 目前只寫性別任務，未提 age/ 延伸（是否加入由使用者決定）
